@@ -13,6 +13,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #191970;
+    margin: 20px;
+    padding: 30px;
+    background: #ff73a9;
 }
 
 .login-box h1 {
