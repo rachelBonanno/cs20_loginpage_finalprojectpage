@@ -90,6 +90,10 @@ input:active {
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
+a {
+    text-align: center;
+}
+
 .button2 {
     cursor: pointer;
     width: 100%;
@@ -99,7 +103,7 @@ input:active {
     border: none;
     /*border-radius: 0.5rem;*/
     font-size: 12px;
-    cursor: pointer;
+    /*cursor: pointer;*/
     margin: 4px 0;
     /*box-shadow: 0 0.25rem #ccc;*/
     /*transition: transform 0.15s, box-shadow 0.15s;*/
