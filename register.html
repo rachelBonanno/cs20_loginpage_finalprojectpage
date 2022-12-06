@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="login.css">
+  <title>Register Page</title>
+</head>
+
+<body>
+<form action="validateregister.php" method="post">
+  <div class="login-box">
+    <h1>Register</h1>
+
+    <div class="textbox">
+      <input type="text" placeholder="First Name"
+             name="Firstname" value="">
+    </div>
+
+    <div class="textbox">
+      <input type="text" placeholder="Last Name"
+             name="Lastname" value="">
+    </div>
+
+    <div class="textbox">
+      <input type="text" placeholder="Username"
+             name="username" value="">
+    </div>
+
+    <div class="textbox">
+      <input type="password" placeholder="Password"
+             name="password" value="">
+    </div>
+
+    <input class="button" type="submit"
+           name="register" value="Register">
+    <a href=index.html><input class="button2" type="submit"
+              name="login" value="Have an account? Login Here."></a>
+  </div>
+</form>
+</body>
+
+</html>

@@ -69,6 +69,7 @@ input:active {
 }
 
 .button {
+    cursor: pointer;
     width: 100%;
     padding: 8px;
     color: #ffffff;
@@ -83,7 +84,29 @@ input:active {
 }
 
 .button:hover {
+    cursor: pointer;
     box-shadow: 0 0 #3e774b;
     transform: translateY(0.25rem);
     transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.button2 {
+    cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    color: #3e774b;
+    background: #ececec;
+    border: none;
+    /*border-radius: 0.5rem;*/
+    font-size: 12px;
+    cursor: pointer;
+    margin: 4px 0;
+    /*box-shadow: 0 0.25rem #ccc;*/
+    /*transition: transform 0.15s, box-shadow 0.15s;*/
+}
+
+.button2:hover {
+    cursor: pointer;
+    color: #55aa68;
+    transition: color 0.15s;
 }
