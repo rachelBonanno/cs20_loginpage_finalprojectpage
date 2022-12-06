@@ -12,27 +12,45 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #191970;
+    /*color: #3e774b;*/
+    color: #333;
     margin: 20px;
     padding: 30px;
-    background: #ff73a9;
+    /*background: #b1d6be;*/
+    background: #ececec;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.5rem #ccc;
+    font-family: 'Roboto', sans-serif;
 }
 
 .login-box h1 {
     font-size: 40px;
     text-align: center;
-    border-bottom: 4px solid #191970;
+    border-bottom: 4px solid #55aa68;
     margin-bottom: 50px;
     padding: 13px;
 }
 
 .textbox {
-    width: 100%;
+    display: flex;
+    max-width: 100%;
     overflow: hidden;
     font-size: 20px;
-    padding: 8px 0;
+    background-color: #fefefe;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 8px 0;
-    border-bottom: 1px solid #191970;
+    border-top: none;
+    border-bottom: 2px solid #ccc;
+}
+
+.textbox:focus-within {
+    border-bottom: none;
+    border-top: 2px solid #ccc;
+}
+
+input:active {
+    accent-color: #3e774b;
 }
 
 .fa {
@@ -54,10 +72,18 @@ body {
     width: 100%;
     padding: 8px;
     color: #ffffff;
-    background: none #191970;
+    background: none #55aa68;
     border: none;
-    border-radius: 6px;
+    border-radius: 0.5rem;
     font-size: 18px;
     cursor: pointer;
     margin: 12px 0;
+    box-shadow: 0 0.25rem #3e774b;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.button:hover {
+    box-shadow: 0 0 #3e774b;
+    transform: translateY(0.25rem);
+    transition: transform 0.15s, box-shadow 0.15s;
 }
