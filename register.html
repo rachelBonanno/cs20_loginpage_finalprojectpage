@@ -2,16 +2,61 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/menu_phone.css"/>
+  <link rel="stylesheet" media="screen and (min-width: 768px)" href="css/menu.css"/>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="description" content="Register Page">
+  <meta name="author" content="Rachel Bonanno">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invalid Login</title>
+  <div class="topnav">
+    <a id="title" href="index.html" ><h2> Equal Foods </h2></a>
+    <a href="index.html">Home</a>
+    <a href="Product_Page.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="terms_and_service.html">Terms of Service</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+  <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="css/login.css">
   <title>Register Page</title>
+
+  <script>
+    setInterval(myFunction, 10);
+    function myFunction() {
+      let x = document.forms["formster"]["Firstname"].value;
+      let y = document.forms["formster"]["Lastname"].value;
+      let w = document.forms["formster"]["username"].value;
+      let z = document.forms["formster"]["password"].value;
+
+      if (x == "") {
+        document.getElementById('enterfirst').style.visibility = 'visible';
+      } else{
+        document.getElementById('enterfirst').style.visibility = 'hidden';
+      }
+      if (y == "") {
+        document.getElementById('enterlast').style.visibility = 'visible';
+      } else {
+        document.getElementById('enterlast').style.visibility = 'hidden';
+      }
+      if (w == "") {
+        document.getElementById('enteruser').style.visibility = 'visible';
+      } else {
+        document.getElementById('enteruser').style.visibility = 'hidden';
+      }
+      if (z == "") {
+        document.getElementById('enterpass').style.visibility = 'visible';
+      } else {
+        document.getElementById('enterpass').style.visibility = 'hidden';
+      }
+    }
+  </script>
 </head>
 
 <body>
-<form action="validateregister.php" method="post">
+<form name="formster" action="registervalidate.php" method="post">
   <div class="login-box">
     <h1>Register</h1>
 
@@ -19,21 +64,26 @@
       <input type="text" placeholder="First Name"
              name="Firstname" value="">
     </div>
+    <p id="enterfirst">PLEASE ENTER FIRST NAME</p>
 
     <div class="textbox">
       <input type="text" placeholder="Last Name"
              name="Lastname" value="">
     </div>
+    <p id="enterlast">PLEASE ENTER LAST NAME</p>
 
     <div class="textbox">
       <input type="text" placeholder="Username"
              name="username" value="">
     </div>
+    <p id="enteruser">PLEASE ENTER USERNAME</p>
+    <p id="unavailable" hidden>USERNAME UNAVAILABLE</p>
 
     <div class="textbox">
       <input type="password" placeholder="Password"
              name="password" value="">
     </div>
+    <p id="enterpass">PLEASE ENTER PASSWORD</p>
 
     <input class="button" type="submit"
            name="register" value="Register">
