@@ -1,37 +1,31 @@
 <?php
 
-include_once('connection.php');
+    include_once('connection.php');
 
-function test_input($data) {
+    function test_input($data) {
 
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM Customer");
+//    $query = "SELECT * FROM users WHERE user='{$username}' AND password='{$password}'";
+//    $result = mysql_query($query);
+    $stmt = $conn->prepare("SELECT * FROM Customer WHERE username='$username' AND password='$password'");
     $stmt->execute();
-    $users = $stmt->fetchAll();
+    $user = $stmt->fetchAll();
 
-    foreach($users as $user) {
-
-        if(($user['username'] == $username) && ($user['password'] == $password)) {
-            $cookie_name = "currentuser";
-            $cookie_value = $user['customer_Id'];
-            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-        }
-        else {
-            echo "<script language='javascript'>";
-            echo "alert('WRONG INFORMATION')";
-            echo "</script>";
-            die();
-        }
+    if (!$user) {
+        header('Location: http://olivere3.sg-host.com/logininvalid.html');
+    } else {
+//        $row = mysql_fetch_assoc($user);
+        $cookie_name = "currentuser";
+        $cookie_value = $user['customer_Id'];
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+        header('Location: http://olivere3.sg-host.com/loginthanks.html');
     }
-}
 
 ?>
